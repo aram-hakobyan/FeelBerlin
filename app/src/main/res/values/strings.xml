@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Feel Berlin</string>
+    <string name="skip_step"><![CDATA[Skip step >>]]></string>
+    <string name="get_in">Get In</string>
+    <string name="sign_in_header_text"><b>Log in</b> using your Feel Berlin account to get access to pictures, videos, deals, and much more!</string>
+    <string name="email">EMAIL</string>
+    <string name="password">PASSWORD</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="keep_me_signed_in">Keep me signed in.</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="bday">BIRTHDAY</string>
+    <string name="username">USERNAME</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="updates">Updates</string>
+    <string name="cool_places">Cool Places</string>
+    <string name="my_ticket">My Ticket</string>
+    <string name="about_fb">About Feel Berlin</string>
+    <string name="logout">Logout</string>
+    <string name="notifications">Notifications</string>
+    <string name="leave_feedback">Leave feedback</string>
+    <string name="help_support"><![CDATA[Help & support]]></string>
+    <string name="in_app_notifications">In-App Notifications</string>
+    <string name="in_app_vibrate">In-App Vibrate</string>
+    <string name="in_app_sounds">In-App Sounds</string>
+    <string name="hint_feedback">How can we improve?</string>
+    <string name="event">Event</string>
+    <string name="date">Date</string>
+    <string name="event_name">Feel Berlin 2017</string>
+    <string name="venue">Venue</string>
+    <string name="starting">Starting</string>
+    <string name="date_start">08:00 AM</string>
+    <string name="ku_damm_beach">Ku\'Damm Beach</string>
+    <string name="date_16_18th_of_june">16-18th of June</string>
+    <string name="options">Options</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper pellentesque velit in scelerisque. Nulla tincidunt ultrices nisi, id venenatis nisi. Donec laoreet blandit libero,quis porttitor mi, ac dictum ante. Maecenas bibendum scelerisque commodo.\n\nMorbi eleifend interdum arcu, non iaculis felis congue sit amet. Phasellus ex tellus, placerat consectetur fermentum in, gravida sit amet dui. Duis tristique pulvinar vehicula. Nulla vehicula mauris ante, non aliquet turpis auctor at.</string>
+    <string name="see_agenda">See 2017 Agenda</string>
+    <string name="download">Download</string>
+    <string name="edit_profile"><![CDATA[Edit profile >>]]></string>
+    <string name="download_your_qr">Download your QR code here or check your email in case there is no internet connection available at the start or during the event.</string>
+    <string name="your_qr_has_been_created">Your QR has been created</string>
+    <string name="fund_forum_2017">Fund Forum 2017</string>
+    <string name="feel_berlin_17_venue">Feel Berlin \'17 Venue</string>
+    <string name="tribal_bar">Tribal Bar</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="cafes">Cafes</string>
+    <string name="send">Send</string>
+</resources>

@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_filter_dialog"
+    android:gravity="right"
+    android:orientation="vertical"
+    android:padding="50dp">
+
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/fund_forum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/fund_forum_2017"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/venue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/feel_berlin_17_venue"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/tribal_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/tribal_bar"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/rests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/restaurants"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/cafes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/cafes"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/close" />
+
+</LinearLayout>

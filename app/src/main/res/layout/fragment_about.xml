@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <include layout="@layout/toolbar" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingTop="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_header" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:paddingEnd="7dp"
+                    android:paddingStart="7dp"
+                    android:paddingTop="15dp"
+                    android:src="@drawable/logo_white" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/event"
+                        android:textAllCaps="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/event_name"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/venue"
+                        android:textAllCaps="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/ku_damm_beach"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/starting"
+                        android:textAllCaps="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/date_start"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date"
+                        android:textAllCaps="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/date_16_18th_of_june"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/options"
+                        android:textAllCaps="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/set_alarm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16sp"
+                            android:adjustViewBounds="true"
+                            android:paddingEnd="8dp"
+                            android:src="@drawable/clock" />
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/about_share"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16sp"
+                            android:adjustViewBounds="true"
+                            android:paddingStart="8dp"
+                            android:src="@drawable/share" />
+
+                    </LinearLayout>
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <de.feelberlin.android.view.FBTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:autoLink="web"
+                        android:text="www.fb17.nta.io"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_margin="30dp"
+                android:background="@color/light_gray_text" />
+
+            <de.feelberlin.android.view.FBTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="30dp"
+                android:paddingEnd="30dp"
+                android:paddingStart="30dp"
+                android:text="@string/lorem_ipsum"
+                android:textColor="@color/gray_text"
+                android:textSize="14sp" />
+
+            <de.feelberlin.android.view.FBButton
+                android:id="@+id/btn_see_agenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_button_rounded"
+                android:paddingEnd="80dp"
+                android:paddingStart="80dp"
+                android:text="@string/see_agenda"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/board_1" />
+
+    <de.feelberlin.android.view.FBTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to"
+        android:textAllCaps="true"
+        android:textColor="@color/gray_text"
+        android:textSize="25sp" />
+
+    <de.feelberlin.android.view.FBTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feel Berlin 2017"
+        android:textAllCaps="true"
+        android:textColor="@color/gray_text"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <de.feelberlin.android.view.FBTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="The place where\nglobal leaders gather."
+        android:textAllCaps="false"
+        android:textColor="@color/gray_text"
+        android:textSize="16sp" />
+</LinearLayout>

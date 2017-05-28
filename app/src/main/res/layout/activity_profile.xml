@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingTop="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:paddingEnd="15dp"
+            android:paddingStart="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back" />
+
+        <de.feelberlin.android.view.FBTextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/menu_1"
+            android:text="John DOE"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingStart="60dp"
+        android:text="john.doe@feelberlin17.com"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:id="@+id/notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingStart="45dp">
+
+        <de.feelberlin.android.view.FBTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/alert"
+            android:text="@string/notifications"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="40dp"
+            android:scaleX="-1"
+            android:src="@drawable/back" />
+
+    </RelativeLayout>
+
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/help"
+        android:paddingStart="45dp"
+        android:text="@string/help_support"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    <RelativeLayout
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingStart="45dp">
+
+        <de.feelberlin.android.view.FBTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/feedback"
+            android:text="@string/leave_feedback"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="40dp"
+            android:scaleX="-1"
+            android:src="@drawable/back" />
+
+    </RelativeLayout>
+
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/menu_3"
+        android:paddingStart="15dp"
+        android:text="@string/about_fb"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+</LinearLayout>
