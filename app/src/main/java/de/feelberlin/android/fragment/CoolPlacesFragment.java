@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.view.WindowManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.feelberlin.android.Navigator;
 import de.feelberlin.android.R;
 import de.feelberlin.android.activity.ToolbarListener;
 import de.feelberlin.android.view.FBTextView;
@@ -32,7 +34,7 @@ public class CoolPlacesFragment extends Fragment {
     AppCompatImageView action;
 
     private ToolbarListener toolbarListener;
-    private boolean isList;
+    private boolean isList = true;
     private Dialog dialog;
 
     @Nullable
@@ -58,13 +60,13 @@ public class CoolPlacesFragment extends Fragment {
     }
 
     private void showList() {
-        action.setImageResource(R.drawable.menu_list);
-        isList = true;
+        action.setImageResource(R.drawable.menu_map);
+        Navigator.setFragment((AppCompatActivity) getActivity(), PlacesListFragment.class, R.id.places_container);
     }
 
     private void showMap() {
-        action.setImageResource(R.drawable.menu_map);
-        isList = false;
+        action.setImageResource(R.drawable.menu_list);
+        Navigator.setFragment((AppCompatActivity) getActivity(), MapsFragment.class, R.id.places_container);
     }
 
     @OnClick(R.id.btn_menu)
@@ -80,6 +82,7 @@ public class CoolPlacesFragment extends Fragment {
         } else {
             showList();
         }
+        isList = !isList;
     }
 
     @OnClick(R.id.filter)

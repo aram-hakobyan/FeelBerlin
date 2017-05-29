@@ -12,6 +12,7 @@ import de.feelberlin.android.adapter.MenuAdapter;
 import de.feelberlin.android.fragment.AboutFragment;
 import de.feelberlin.android.fragment.CoolPlacesFragment;
 import de.feelberlin.android.fragment.MyTicketFragment;
+import de.feelberlin.android.fragment.UpdatesFragment;
 import de.feelberlin.android.view.MenuOption;
 import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout;
 import nl.psdcompany.duonavigationdrawer.views.DuoMenuView;
@@ -30,16 +31,18 @@ public class HomeActivity extends BaseActivity implements DuoMenuView.OnMenuClic
         setContentView(R.layout.activity_home);
 
         viewHolder = new ViewHolder();
-        setupMenu();
+        setupLeftMenu();
         setupDrawer();
+
+        showPlaces();
     }
 
-    private void setupMenu() {
+    private void setupLeftMenu() {
         options = new ArrayList<>();
-        options.add(new MenuOption(R.drawable.menu_6, getString(R.string.updates))); // 0
-        options.add(new MenuOption(R.drawable.menu_4, getString(R.string.cool_places))); // 1
-        options.add(new MenuOption(R.drawable.menu_5, getString(R.string.my_ticket))); // 2
-        options.add(new MenuOption(R.drawable.menu_3, getString(R.string.about_fb))); // 3
+        options.add(new MenuOption(R.drawable.menu_6, getString(R.string.updates)));
+        options.add(new MenuOption(R.drawable.menu_4, getString(R.string.cool_places)));
+        options.add(new MenuOption(R.drawable.menu_5, getString(R.string.my_ticket)));
+        options.add(new MenuOption(R.drawable.menu_3, getString(R.string.about_fb)));
 
         menuAdapter = new MenuAdapter(options);
         viewHolder.mDuoMenuView.setOnMenuClickListener(this);
@@ -75,18 +78,33 @@ public class HomeActivity extends BaseActivity implements DuoMenuView.OnMenuClic
     @Override
     public void onOptionClicked(int position, Object objectClicked) {
         switch (position) {
+            case 0:
+                showUpdates();
+                break;
             case 1:
-                Navigator.setFragment(this, CoolPlacesFragment.class);
+                showPlaces();
                 break;
             case 2:
                 onActionClick();
                 break;
             case 3:
-                Navigator.setFragment(this, AboutFragment.class);
+                showAbout();
                 break;
         }
 
         viewHolder.mDuoDrawerLayout.closeDrawer();
+    }
+
+    private void showAbout() {
+        Navigator.setFragment(this, AboutFragment.class);
+    }
+
+    private void showPlaces() {
+        Navigator.setFragment(this, CoolPlacesFragment.class);
+    }
+
+    private void showUpdates() {
+        Navigator.setFragment(this, UpdatesFragment.class);
     }
 
     @Override
@@ -101,8 +119,8 @@ public class HomeActivity extends BaseActivity implements DuoMenuView.OnMenuClic
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == Navigator.REQUEST_CODE_ABOUT) {
-            Navigator.setFragment(this, AboutFragment.class);
+        if (requestCode == Navigator.REQUEST_CODE_ABOUT && resultCode == Navigator.RESULT_CODE_ABOUT) {
+            showAbout();
         }
     }
 

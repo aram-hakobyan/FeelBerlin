@@ -40,7 +40,7 @@ public class ProfileActivity extends BaseActivity {
     @OnClick(R.id.about)
     public void aboutAction() {
         Intent intent = new Intent();
-        setResult(Navigator.REQUEST_CODE_ABOUT, intent);
+        setResult(Navigator.RESULT_CODE_ABOUT, intent);
         finish();
     }
 }

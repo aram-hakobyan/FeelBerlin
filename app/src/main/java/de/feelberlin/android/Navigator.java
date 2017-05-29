@@ -22,6 +22,7 @@ public class Navigator {
 
     private static final int HOME_FRAGMENT_CONTAINER_RESOURCE = R.id.container;
     public static final int REQUEST_CODE_ABOUT = 1;
+    public static final int RESULT_CODE_ABOUT = 10;
 
     public static void setFragment(AppCompatActivity activity, Class fragmentClass) {
         setFragment(activity, fragmentClass, HOME_FRAGMENT_CONTAINER_RESOURCE);
@@ -31,7 +32,7 @@ public class Navigator {
         FragmentManager fragmentManager = activity.getSupportFragmentManager();
         try {
             Fragment fragment = (Fragment) fragmentClass.newInstance();
-            fragmentManager.beginTransaction().replace(resId, fragment).commit();
+            fragmentManager.beginTransaction().replace(resId, fragment).commitAllowingStateLoss();
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -54,7 +55,7 @@ public class Navigator {
             if (args != null) {
                 fragment.setArguments(args);
             }
-            fragmentManager.beginTransaction().replace(resId, fragment).addToBackStack(fragmentClass.getName()).commit();
+            fragmentManager.beginTransaction().replace(resId, fragment).addToBackStack(fragmentClass.getName()).commitAllowingStateLoss();
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (Exception e) {

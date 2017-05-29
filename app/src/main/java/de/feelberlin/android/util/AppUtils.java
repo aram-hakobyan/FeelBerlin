@@ -2,11 +2,13 @@ package de.feelberlin.android.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.AlarmClock;
 import android.provider.MediaStore;
+import android.util.TypedValue;
 import android.webkit.URLUtil;
 import android.widget.Toast;
 
@@ -88,4 +90,8 @@ public class AppUtils {
         }
     }
 
+    public static int dpToPx(Context context, int dp) {
+        Resources r = context.getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
 }

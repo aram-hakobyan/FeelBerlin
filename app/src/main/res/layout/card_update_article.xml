@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingEnd="3dp"
+    android:paddingStart="3dp">
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_image_height"
+        android:adjustViewBounds="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_header" />
+
+    <de.feelberlin.android.view.FBTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/event_name"
+        android:textAllCaps="true"
+        android:textColor="@color/gray_text"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <de.feelberlin.android.view.FBTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/clock"
+                android:drawableTint="@color/colorPrimary"
+                android:paddingEnd="10dp"
+                android:text="Event date"
+                android:textColor="@color/gray_text"
+                android:textSize="15sp" />
+
+            <de.feelberlin.android.view.FBTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/menu_4"
+                android:drawableTint="@color/colorPrimary"
+                android:paddingEnd="10dp"
+                android:text="Address"
+                android:textColor="@color/gray_text"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <de.feelberlin.android.view.FBTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="13dp"
+                android:drawableStart="@drawable/walk"
+                android:text="Distance"
+                android:textColor="@color/gray_text"
+                android:textSize="15sp" />
+
+            <de.feelberlin.android.view.FBTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/clock"
+                android:text="Hours left"
+                android:textColor="@color/gray_text"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <de.feelberlin.android.view.FBButton
+            android:id="@+id/view_map"
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_weight="5"
+            android:background="@drawable/bg_button_rounded"
+            android:lines="1"
+            android:text="@string/map_view"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <de.feelberlin.android.view.FBButton
+            android:id="@+id/contact"
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="30dp"
+            android:layout_weight="5"
+            android:background="@drawable/bg_button_rounded"
+            android:lines="1"
+            android:text="@string/contact"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/set_alarm"
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_weight="2"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/alert"
+            android:tint="@color/colorPrimary" />
+    </LinearLayout>
+
+</LinearLayout>
