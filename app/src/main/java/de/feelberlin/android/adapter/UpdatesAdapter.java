@@ -1,6 +1,7 @@
 package de.feelberlin.android.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,15 +15,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.feelberlin.android.R;
+import de.feelberlin.android.activity.ToolbarListener;
 import de.feelberlin.android.model.Update;
 import de.feelberlin.android.view.FBButton;
 
 
-public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
 
-    private final int ARTICLE = 0, ARTICLE_WITH_THUMB = 1, VIDEO = 2, GALLERY = 3;
+    private final int ARTICLE = 0, ARTICLE_WITH_THUMB = 1, VIDEO = 2, GALLERY = 3, HEADER = 10;
 
     private Context context;
+    private ToolbarListener toolbarListener;
+
     private List<Update> updates;
     private int positionCurrent;
     private PopupWindow popup;
@@ -58,6 +62,10 @@ public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         notifyDataSetChanged();
     }
 
+    public void setToolbarListener(ToolbarListener toolbarListener) {
+        this.toolbarListener = toolbarListener;
+    }
+
     @Override
     public int getItemCount() {
         return updates.size();
@@ -66,10 +74,21 @@ public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public int getItemViewType(int position) {
         Update update = updates.get(position);
-        if (update.hasVideo()) {
-            return VIDEO;
+        // FIXME: 5/30/2017
+        switch (position) {
+            case 0:
+                return HEADER;
+            case 1:
+                return ARTICLE_WITH_THUMB;
+            case 2:
+                return ARTICLE;
+            case 3:
+                return VIDEO;
+            case 4:
+                return GALLERY;
+            default:
+                return ARTICLE_WITH_THUMB;
         }
-        return ARTICLE;
     }
 
     @Override
@@ -78,6 +97,10 @@ public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
 
         switch (viewType) {
+            case HEADER:
+                View v0 = inflater.inflate(R.layout.toolbar_places, viewGroup, false);
+                viewHolder = new ViewHolderHeader(v0);
+                break;
             case ARTICLE:
                 View v1 = inflater.inflate(R.layout.card_update_article, viewGroup, false);
                 viewHolder = new ViewHolderPost(v1);
@@ -87,11 +110,11 @@ public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 viewHolder = new ViewHolderAd(v2);
                 break;
             case VIDEO:
-                View v3 = inflater.inflate(R.layout.card_update_article_with_thumb, viewGroup, false);
+                View v3 = inflater.inflate(R.layout.card_update_video_article, viewGroup, false);
                 viewHolder = new ViewHolderImportantPost(v3);
                 break;
             case GALLERY:
-                View v4 = inflater.inflate(R.layout.card_update_article_with_thumb, viewGroup, false);
+                View v4 = inflater.inflate(R.layout.card_update_gallery_article, viewGroup, false);
                 viewHolder = new ViewHolderPostWithThumb(v4);
                 break;
             default:
@@ -103,6 +126,10 @@ public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         switch (viewHolder.getItemViewType()) {
+            case HEADER:
+                ViewHolderHeader vh0 = (ViewHolderHeader) viewHolder;
+                configureViewHolderHeader(vh0, position);
+                break;
             case ARTICLE:
                 ViewHolderPost vh1 = (ViewHolderPost) viewHolder;
                 configureViewHolderArticle(vh1, position);
@@ -124,9 +151,13 @@ public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
+    private void configureViewHolderHeader(ViewHolderHeader vh1, int position) {
+
+    }
+
     private void configureViewHolderArticle(ViewHolderPost vh1, int position) {
         final Update post = updates.get(position);
-        vh1.title.setText("Title");
+//        vh1.title.setText("Title");
     }
 
     private void configureViewHolderArticleWithThumb(ViewHolderAd vh2) {
@@ -141,12 +172,39 @@ public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_menu:
+                if (toolbarListener != null)
+                    toolbarListener.onMenuClick();
+                break;
+            case R.id.toolbar_action:
+                if (toolbarListener != null)
+                    toolbarListener.onActionClick();
+                break;
+        }
+    }
+
+    public class ViewHolderHeader extends RecyclerView.ViewHolder {
+
+        AppCompatImageView menu, ticket;
+
+        public ViewHolderHeader(View v) {
+            super(v);
+            menu = (AppCompatImageView) v.findViewById(R.id.btn_menu);
+            ticket = (AppCompatImageView) v.findViewById(R.id.toolbar_action);
+            menu.setOnClickListener(UpdatesAdapter.this);
+            ticket.setOnClickListener(UpdatesAdapter.this);
+        }
+    }
+
     public class ViewHolderPost extends RecyclerView.ViewHolder {
         TextView title;
 
         public ViewHolderPost(View v) {
             super(v);
-           // title = (TextView) v.findViewById(R.id.post_title);
+            // title = (TextView) v.findViewById(R.id.post_title);
         }
     }
 
@@ -163,7 +221,7 @@ public class UpdatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         public ViewHolderImportantPost(View v) {
             super(v);
-           // image = (ImageView) v.findViewById(R.id.thumbnail);
+            // image = (ImageView) v.findViewById(R.id.thumbnail);
         }
     }
 

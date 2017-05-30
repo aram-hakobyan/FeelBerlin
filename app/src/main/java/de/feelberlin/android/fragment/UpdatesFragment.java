@@ -1,16 +1,20 @@
 package de.feelberlin.android.fragment;
 
-import android.content.Context;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.ContentLoadingProgressBar;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +30,7 @@ import de.feelberlin.android.util.AppUtils;
 import de.feelberlin.android.view.EndlessRecyclerViewScrollListener;
 import de.feelberlin.android.view.GridSpacingItemDecoration;
 
-public class UpdatesFragment extends Fragment {
+public class UpdatesFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.progress)
     ContentLoadingProgressBar progressBar;
@@ -34,9 +38,12 @@ public class UpdatesFragment extends Fragment {
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
 
-    private ToolbarListener toolbarListener;
+    @BindView(R.id.swipeRefreshLayout)
+    SwipeRefreshLayout swipeRefreshLayout;
+
     private EndlessRecyclerViewScrollListener scrollListener;
     private UpdatesAdapter adapter;
+    private Dialog dialog;
 
     @Nullable
     @Override
@@ -52,6 +59,10 @@ public class UpdatesFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
+        if (getActivity() instanceof ToolbarListener) {
+            adapter.setToolbarListener((ToolbarListener) getActivity());
+        }
+
         scrollListener = new EndlessRecyclerViewScrollListener(mLayoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
@@ -60,29 +71,13 @@ public class UpdatesFragment extends Fragment {
         };
         recyclerView.addOnScrollListener(scrollListener);
 
+        swipeRefreshLayout.setColorSchemeResources(
+                R.color.colorPrimary,
+                R.color.colorPrimaryDark);
+        swipeRefreshLayout.setOnRefreshListener(this);
+
         loadPosts();
         return view;
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        if (getActivity() instanceof ToolbarListener) {
-            toolbarListener = (ToolbarListener) getActivity();
-        }
-    }
-
-    @OnClick(R.id.btn_menu)
-    public void menuAction() {
-        if (toolbarListener != null)
-            toolbarListener.onMenuClick();
-    }
-
-    @OnClick(R.id.toolbar_action)
-    public void ticketAction() {
-        if (toolbarListener != null)
-            toolbarListener.onActionClick();
     }
 
     public void loadPosts() {
@@ -97,6 +92,56 @@ public class UpdatesFragment extends Fragment {
 
         adapter.addAll(updates);
         progressBar.hide();
+        swipeRefreshLayout.setRefreshing(false);
     }
 
+    @Override
+    public void onRefresh() {
+        adapter.clearAll();
+        loadPosts();
+    }
+
+    @OnClick(R.id.filter)
+    public void showFilterMenu() {
+        dialog = new Dialog(getActivity(),
+                R.style.DialogSlideAnim);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().clearFlags(
+                WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+        dialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.dialog_filter_updates);
+
+        ButterKnife.findById(dialog, R.id.btn_close).setOnClickListener(onClickListener);
+
+        if (!dialog.isShowing())
+            dialog.show();
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        Window window = dialog.getWindow();
+        lp.copyFrom(window.getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+        window.setAttributes(lp);
+    }
+
+    private void closeFilterMenu() {
+        if (dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
+        }
+    }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.btn_close:
+                    closeFilterMenu();
+                    break;
+            }
+        }
+    };
 }

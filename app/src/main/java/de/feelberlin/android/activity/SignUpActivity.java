@@ -22,4 +22,10 @@ public class SignUpActivity extends AppCompatActivity {
         Navigator.navigateToSignIn(this);
         finish();
     }
+
+    @OnClick(R.id.skip)
+    public void skipUpAction() {
+        Navigator.navigateToHome(this);
+        finish();
+    }
 }

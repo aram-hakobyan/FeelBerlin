@@ -20,4 +20,10 @@ public class SignInActivity extends BaseActivity {
     public void signUpAction() {
         Navigator.navigateToSignUp(this);
     }
+
+    @OnClick(R.id.skip)
+    public void skipUpAction() {
+        Navigator.navigateToHome(this);
+        finish();
+    }
 }

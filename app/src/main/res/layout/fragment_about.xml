@@ -194,6 +194,17 @@
                 android:textColor="@color/gray_text"
                 android:textSize="14sp" />
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp">
+
+                <include layout="@layout/gallery_view" />
+            </LinearLayout>
+
             <de.feelberlin.android.view.FBButton
                 android:id="@+id/btn_see_agenda"
                 android:layout_width="wrap_content"

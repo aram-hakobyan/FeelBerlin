@@ -96,7 +96,7 @@ public class CoolPlacesFragment extends Fragment {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent);
         dialog.setCancelable(true);
-        dialog.setContentView(R.layout.dialog_filter);
+        dialog.setContentView(R.layout.dialog_filter_places);
 
         ButterKnife.findById(dialog, R.id.btn_close).setOnClickListener(onClickListener);
 

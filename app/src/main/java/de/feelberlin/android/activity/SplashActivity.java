@@ -57,6 +57,7 @@ public class SplashActivity extends BaseActivity {
 
     @OnClick(R.id.skip)
     public void skipAction() {
-        // TODO: 5/27/17
+        Navigator.navigateToHome(this);
+        finish();
     }
 }

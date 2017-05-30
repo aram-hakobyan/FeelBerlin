@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import de.feelberlin.android.activity.BaseActivity;
 import de.feelberlin.android.activity.FeedbackActivity;
+import de.feelberlin.android.activity.HomeActivity;
 import de.feelberlin.android.activity.NotificationSettingsActivity;
 import de.feelberlin.android.activity.ProfileActivity;
 import de.feelberlin.android.activity.SignInActivity;
@@ -69,6 +70,10 @@ public class Navigator {
 
     public static void navigateToSignUp(Context context) {
         context.startActivity(new Intent(context, SignUpActivity.class));
+    }
+
+    public static void navigateToHome(Context context) {
+        context.startActivity(new Intent(context, HomeActivity.class));
     }
 
     public static void navigateToProfile(BaseActivity context) {
