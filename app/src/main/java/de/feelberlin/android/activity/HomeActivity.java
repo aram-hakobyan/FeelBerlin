@@ -34,7 +34,7 @@ public class HomeActivity extends BaseActivity implements DuoMenuView.OnMenuClic
         setupLeftMenu();
         setupDrawer();
 
-        showPlaces();
+        showUpdates();
     }
 
     private void setupLeftMenu() {

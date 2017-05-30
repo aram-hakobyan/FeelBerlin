@@ -5,4 +5,14 @@ package de.feelberlin.android.model;
  */
 
 public class Update {
+
+    private boolean hasVideo;
+
+    public boolean hasVideo() {
+        return hasVideo;
+    }
+
+    public void setHasVideo(boolean hasVideo) {
+        this.hasVideo = hasVideo;
+    }
 }

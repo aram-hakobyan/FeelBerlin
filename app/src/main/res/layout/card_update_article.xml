@@ -9,142 +9,73 @@
     android:paddingEnd="3dp"
     android:paddingStart="3dp">
 
-    <ImageView
-        android:id="@+id/thumbnail"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/card_image_height"
-        android:adjustViewBounds="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_header" />
-
     <de.feelberlin.android.view.FBTextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/event_name"
-        android:textAllCaps="true"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/type_update_1"
+        android:text="Come sit next to us at the Tribal Bar"
+        android:textAllCaps="false"
         android:textColor="@color/gray_text"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textSize="18sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <de.feelberlin.android.view.FBTextView
+        android:id="@+id/tags"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <de.feelberlin.android.view.FBTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
-                android:drawableStart="@drawable/clock"
-                android:drawableTint="@color/colorPrimary"
-                android:paddingEnd="10dp"
-                android:text="Event date"
-                android:textColor="@color/gray_text"
-                android:textSize="15sp" />
-
-            <de.feelberlin.android.view.FBTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:drawablePadding="12dp"
-                android:drawableStart="@drawable/menu_4"
-                android:drawableTint="@color/colorPrimary"
-                android:paddingEnd="10dp"
-                android:text="Address"
-                android:textColor="@color/gray_text"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <de.feelberlin.android.view.FBTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="13dp"
-                android:drawableStart="@drawable/walk"
-                android:text="Distance"
-                android:textColor="@color/gray_text"
-                android:textSize="15sp" />
-
-            <de.feelberlin.android.view.FBTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:drawablePadding="10dp"
-                android:drawableStart="@drawable/clock"
-                android:text="Hours left"
-                android:textColor="@color/gray_text"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:weightSum="12">
+        android:text="#tribaldrink #fun #pinacolada #allday"
+        android:textAllCaps="false"
+        android:textColor="@color/light_gray_text"
+        android:textSize="18sp" />
 
-        <de.feelberlin.android.view.FBButton
-            android:id="@+id/view_map"
-            android:layout_width="0dp"
-            android:layout_height="33dp"
-            android:layout_weight="5"
-            android:background="@drawable/bg_button_rounded"
-            android:lines="1"
-            android:text="@string/map_view"
-            android:textAllCaps="true"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_margin="20dp"
+        android:background="@color/light_gray_text" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp">
+
+        <de.feelberlin.android.view.FBTextView
+            android:id="@+id/likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/heart"
+            android:text="23"
+            android:textColor="#f05e59"
+            android:textSize="16sp" />
+
+        <de.feelberlin.android.view.FBTextView
+            android:id="@+id/shares"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/likes"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/share_green"
+            android:text="43"
             android:textColor="@color/colorPrimary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
 
-        <de.feelberlin.android.view.FBButton
-            android:id="@+id/contact"
-            android:layout_width="0dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="30dp"
-            android:layout_weight="5"
-            android:background="@drawable/bg_button_rounded"
-            android:lines="1"
-            android:text="@string/contact"
-            android:textAllCaps="true"
-            android:textColor="@color/colorPrimary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/set_alarm"
-            android:layout_width="0dp"
-            android:layout_height="33dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="25dp"
-            android:layout_weight="2"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/alert"
-            android:tint="@color/colorPrimary" />
-    </LinearLayout>
+        <de.feelberlin.android.view.FBTextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="25 minutes ago"
+            android:textColor="@color/light_gray_text" />
+    </RelativeLayout>
 
 </LinearLayout>
