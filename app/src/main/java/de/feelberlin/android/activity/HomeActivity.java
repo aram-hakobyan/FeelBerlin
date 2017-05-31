@@ -44,7 +44,7 @@ public class HomeActivity extends BaseActivity implements DuoMenuView.OnMenuClic
         options.add(new MenuOption(R.drawable.menu_5, getString(R.string.my_ticket)));
         options.add(new MenuOption(R.drawable.menu_3, getString(R.string.about_fb)));
 
-        menuAdapter = new MenuAdapter(options);
+        menuAdapter = new MenuAdapter(this, options);
         viewHolder.mDuoMenuView.setOnMenuClickListener(this);
         viewHolder.mDuoMenuView.setAdapter(menuAdapter);
     }

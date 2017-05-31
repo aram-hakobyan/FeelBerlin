@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_filter_dialog"
@@ -14,7 +15,8 @@
         android:text="@string/photos"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:font="light" />
 
     <de.feelberlin.android.view.FBTextView
         android:id="@+id/venue"
@@ -24,7 +26,8 @@
         android:text="@string/videos"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:font="light" />
 
     <de.feelberlin.android.view.FBTextView
         android:id="@+id/tribal_bar"
@@ -34,7 +37,8 @@
         android:text="Articles"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:font="light" />
 
     <de.feelberlin.android.view.FBTextView
         android:id="@+id/tribal_bars"
@@ -44,7 +48,8 @@
         android:text="Galleries"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:font="light" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -62,7 +67,8 @@
             android:paddingStart="10dp"
             android:text="Clear filters"
             android:textAllCaps="true"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:font="light" />
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/btn_close"

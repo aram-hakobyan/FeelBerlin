@@ -1,5 +1,6 @@
 package de.feelberlin.android.adapter;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,24 +9,28 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.feelberlin.android.manager.FontsManager;
 import de.feelberlin.android.view.FBTextView;
 import de.feelberlin.android.view.MenuOption;
 
 public class MenuAdapter extends BaseAdapter {
-    private List<MenuOption> mOptions = new ArrayList<>();
 
-    public MenuAdapter(List<MenuOption> options) {
-        mOptions = options;
+    private Context context;
+    private List<MenuOption> options = new ArrayList<>();
+
+    public MenuAdapter(Context context, List<MenuOption> options) {
+        this.context = context;
+        this.options = options;
     }
 
     @Override
     public int getCount() {
-        return mOptions.size();
+        return options.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mOptions.get(position);
+        return options.get(position);
     }
 
     @Override
@@ -35,8 +40,8 @@ public class MenuAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final String option = mOptions.get(position).getText();
-        final int icon = mOptions.get(position).getDrawable();
+        final String option = options.get(position).getText();
+        final int icon = options.get(position).getDrawable();
 
         final FBTextView optionView;
         if (convertView == null) {
@@ -47,10 +52,11 @@ public class MenuAdapter extends BaseAdapter {
 
         optionView.setText(option);
         optionView.setCompoundDrawablesWithIntrinsicBounds(icon, 0, 0, 0);
-        optionView.setCompoundDrawablePadding(20);
+        optionView.setCompoundDrawablePadding(40);
         optionView.setTextColor(Color.parseColor("#FFFFFF"));
         optionView.setTextSize(18);
-        optionView.setPadding(70, 60, 0, 0);
+        optionView.setPadding(90, 160, 0, 0);
+        optionView.setTypeface(FontsManager.getInstance().getLight(context));
 
         return optionView;
     }

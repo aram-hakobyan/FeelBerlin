@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
@@ -14,9 +15,9 @@
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/back"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:paddingEnd="15dp"
             android:paddingStart="30dp"
-            android:layout_height="wrap_content"
             android:src="@drawable/back" />
 
         <de.feelberlin.android.view.FBTextView
@@ -28,7 +29,7 @@
             android:text="John DOE"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            app:font="semibold" />
     </LinearLayout>
 
     <de.feelberlin.android.view.FBTextView
@@ -39,7 +40,8 @@
         android:paddingStart="60dp"
         android:text="john.doe@feelberlin17.com"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:font="light" />
 
     <RelativeLayout
         android:id="@+id/notifications"
@@ -57,7 +59,8 @@
             android:drawableStart="@drawable/alert"
             android:text="@string/notifications"
             android:textColor="@color/white"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            app:font="light" />
 
         <android.support.v7.widget.AppCompatImageView
             android:layout_width="wrap_content"
@@ -82,7 +85,8 @@
         android:paddingStart="45dp"
         android:text="@string/help_support"
         android:textColor="@color/white"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        app:font="light" />
 
     <RelativeLayout
         android:id="@+id/feedback"
@@ -100,7 +104,8 @@
             android:drawableStart="@drawable/feedback"
             android:text="@string/leave_feedback"
             android:textColor="@color/white"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            app:font="light" />
 
         <android.support.v7.widget.AppCompatImageView
             android:layout_width="wrap_content"
@@ -125,5 +130,6 @@
         android:paddingStart="15dp"
         android:text="@string/about_fb"
         android:textColor="@color/white"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        app:font="light" />
 </LinearLayout>

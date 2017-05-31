@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -28,7 +29,7 @@
         android:textAllCaps="true"
         android:textColor="@color/gray_text"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        app:font="semibold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +53,8 @@
                 android:paddingEnd="10dp"
                 android:text="Event date"
                 android:textColor="@color/gray_text"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:font="light" />
 
             <de.feelberlin.android.view.FBTextView
                 android:layout_width="wrap_content"
@@ -64,7 +66,8 @@
                 android:paddingEnd="10dp"
                 android:text="Address"
                 android:textColor="@color/gray_text"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:font="light" />
 
         </LinearLayout>
 
@@ -81,7 +84,8 @@
                 android:drawableStart="@drawable/walk"
                 android:text="Distance"
                 android:textColor="@color/gray_text"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:font="light" />
 
             <de.feelberlin.android.view.FBTextView
                 android:layout_width="wrap_content"
@@ -91,7 +95,8 @@
                 android:drawableStart="@drawable/clock"
                 android:text="Hours left"
                 android:textColor="@color/gray_text"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:font="light" />
 
         </LinearLayout>
 
@@ -116,7 +121,7 @@
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
             android:textSize="12sp"
-            android:textStyle="bold" />
+            app:font="semibold" />
 
         <de.feelberlin.android.view.FBButton
             android:id="@+id/contact"
@@ -130,7 +135,7 @@
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
             android:textSize="12sp"
-            android:textStyle="bold" />
+            app:font="light" />
 
         <ImageButton
             android:id="@+id/set_alarm"

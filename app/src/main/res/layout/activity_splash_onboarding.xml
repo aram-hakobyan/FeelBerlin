@@ -62,7 +62,7 @@
         android:text="@string/get_in"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
-        android:textStyle="bold" />
+        app:font="semibold" />
 
     <de.feelberlin.android.view.FBTextView
         android:id="@+id/skip"
@@ -73,6 +73,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/skip_step"
         android:textAllCaps="true"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:font="ultralight" />
 
 </RelativeLayout>
