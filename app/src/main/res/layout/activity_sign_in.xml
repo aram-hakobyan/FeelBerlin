@@ -43,7 +43,8 @@
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp">
 
-                <android.support.v7.widget.AppCompatEditText
+                <de.feelberlin.android.view.FBEditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="20dp"
@@ -57,7 +58,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp">
 
-                    <android.support.v7.widget.AppCompatEditText
+                    <de.feelberlin.android.view.FBEditText
+                        android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"

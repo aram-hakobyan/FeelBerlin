@@ -8,6 +8,8 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.AlarmClock;
 import android.provider.MediaStore;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.TypedValue;
 import android.webkit.URLUtil;
 import android.widget.Toast;
@@ -19,12 +21,32 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.UUID;
 
 /**
  * Created by Apple on 5/28/17.
  */
 
 public class AppUtils {
+
+    public static String getDeviceUuid(Context context) {
+        TelephonyManager tManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        String uuid = tManager.getDeviceId();
+        if (uuid == null) {
+            uuid = UUID.randomUUID().toString(); // For tablets
+        }
+
+        return uuid;
+    }
+
+    public static String getAndroidId(Context context) {
+        String id = Settings.Secure.getString(context.getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+        if (id == null)
+            id = "";
+
+        return id;
+    }
 
     public static void setAlarm(Context context) {
         Intent openClockIntent = new Intent(AlarmClock.ACTION_SET_ALARM);
